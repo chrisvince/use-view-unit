@@ -1,0 +1,40 @@
+{
+  "name": "use-view-unit",
+  "version": "1.0.1",
+  "description": "React Hook for returning vh, vw, vmin and vmax values",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisvince/use-view-unit.git"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "react",
+    "hooks",
+    "viewheight",
+    "viewwidth",
+    "view",
+    "height",
+    "view",
+    "width",
+    "vmin",
+    "vmax",
+    "view",
+    "min",
+    "view",
+    "max"
+  ],
+  "author": "Chris Vince",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisvince/use-view-unit/issues"
+  },
+  "homepage": "https://github.com/chrisvince/use-view-unit#readme",
+  "peerDependencies": {
+    "react": "^16.12.0"
+  }
+}
