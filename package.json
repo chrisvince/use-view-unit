@@ -1,10 +1,12 @@
 {
   "name": "use-view-unit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Hook for returning vh, vw, vmin and vmax values",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "build": "webpack --mode=production",
+    "start": "webpack --watch --mode=development"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,11 @@
     "url": "https://github.com/chrisvince/use-view-unit/issues"
   },
   "homepage": "https://github.com/chrisvince/use-view-unit#readme",
+  "devDependencies": {
+    "react": "^16.12.0",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  },
   "peerDependencies": {
     "react": "^16.12.0"
   }
