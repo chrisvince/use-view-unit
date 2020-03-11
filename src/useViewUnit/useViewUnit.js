@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 
 const useViewUnit = () => {
-	const [height, setHeight] = useState(window.innerHeight)
-	const [width, setWidth] = useState(window.innerWidth)
+	const [windowHeight, setWindowHeight] = useState(window.innerHeight)
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
 	const setWindowDimensions = event => {
-		setHeight(event.currentTarget.innerHeight)
-		setWidth(event.currentTarget.innerWidth)
+		setWindowHeight(event.currentTarget.innerHeight)
+		setWindowWidth(event.currentTarget.innerWidth)
 	}
 
 	useEffect(() => {
@@ -14,27 +14,27 @@ const useViewUnit = () => {
 		return () => window.removeEventListener('resize', setWindowDimensions)
 	}, [])
 
-	const vh = percent => {
-		return denominatorPercent(percent, height)
-	}
+	const vh = useCallback(percent => {
+		return denominatorPercent(percent, windowHeight)
+	}, [windowHeight])
 
-	const vw = percent => {
-		return denominatorPercent(percent, width)
-	}
+	const vw = useCallback(percent => {
+		return denominatorPercent(percent, windowWidth)
+	}, [windowWidth])
 
-	const vmin = percent => {
-		if (height < width) {
+	const vmin = useCallback(percent => {
+		if (windowHeight < windowWidth) {
 			return vh(percent)
 		}
 		return vw(percent)
-	}
+	}, [windowHeight, windowWidth])
 
-	const vmax = percent => {
-		if (width < height) {
+	const vmax = useCallback(percent => {
+		if (windowWidth < windowHeight) {
 			return vh(percent)
 		}
 		return vw(percent)
-	}
+	}, [windowHeight, windowWidth])
 
 	const denominatorPercent = (percent, denominator) => {
 		if (!percent) {
@@ -45,9 +45,9 @@ const useViewUnit = () => {
 
 	return {
 		vh,
-		vw,
+		vmax,
 		vmin,
-		vmax
+		vw,
 	}
 }
 
