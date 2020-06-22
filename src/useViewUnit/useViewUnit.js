@@ -1,8 +1,8 @@
 import { useEffect, useState, useCallback } from 'react'
 
 const useViewUnit = () => {
-	const [windowHeight, setWindowHeight] = useState(window.innerHeight)
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+	const [ windowHeight, setWindowHeight ] = useState(window.innerHeight)
+	const [ windowWidth, setWindowWidth ] = useState(window.innerWidth)
 
 	const setWindowDimensions = event => {
 		setWindowHeight(event.currentTarget.innerHeight)
