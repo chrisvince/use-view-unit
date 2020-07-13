@@ -1,6 +1,6 @@
 {
   "name": "use-view-unit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React Hook for returning vh, vw, vmin and vmax values",
   "main": "dist/main.js",
   "scripts": {
